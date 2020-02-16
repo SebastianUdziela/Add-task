@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add task</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400&display=swap" rel="stylesheet">
+    <link href="./dist/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="container">
+        <section>
+            <form>
+                <div class="company_select">
+                    <div class="field">
+                        <input type="text" name="company" id="company" />
+                        <label type="text" for="company" >Nazwa Firmy</label>
+                    </div>
+                    <div class="field">
+                        <img alt="arrow down" src="./dist/images/arrow down.png">
+                        <input type="text" name="employee" id="employee" readonly/>
+                        <label for="employee" type="text">Pracownik</label>
+                        <div class="employee_list">
+                            <div>
+                                <input type="text" placeholder="Szukaj"/>
+                            </div>
+                            <ul>
+                            </ul>
+                        </div>
+                    </div>
+                    <span class="separator"></span>
+                </div>
+                <div class="add_task">
+                    <p>Zadania</p>
+                    <div class="field">
+                        <input type="text" name="task" id="task">
+                        <label for="task">Nazwa Zadania</label>
+                    </div>
+                    <div class="field">
+                        <input type="number" name="amount" id="amount">
+                        <label for="amount">Kwota w PLN</label>
+                    </div>  
+                    <span class='warp_currency'> 
+                        <span>1 euro = <p id="euro">4.22250</p></span> <button>Dodaj</button>
+                    </span>
+                </div>
+            </form>
+        </section>
+        <section class="todo">
+            <table>
+                <tr>
+                    <th id="task_name">Nazwa zadania<img src='./dist/images/arrows.png' alt="arrow"></th>
+                    <th id="price_pln">Kwota w PLN<img src='./dist/images/arrows.png' alt="arrow"></th>
+                    <th id="price_euro">Kwota w EUR<img src='./dist/images/arrows.png' alt="arrow"></th>
+                    <th>Opcje</th>
+                    <th>Dane Pracownika</th>
+                  </tr>
+                  <template id="task_template">
+                    <tr class ="single_task">
+                        <th id="task"></th>
+                        <th id="amount_pln"></th>
+                        <th id="amount_euro"></th>
+                        <th id="delete"> <img src="./dist/images/rubbish.png" alt="rubbish">Usuń</th>
+                        <th id="details">Rozwiń</th>
+                    </tr>
+                    <tr class ="single_task">
+                        <td colspan="5">
+                            <ul>
+                                <li id="name">Imię:</li>
+                                <li id="phone">Telefon:</li>
+                                <li id="email">Email:</li>
+                                <li id="website">Strona:</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </template>
+            </table>
+            <p></p>
+        </section>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./dist/js/animation.js"></script>
+    <script src="./dist/js/search_employee.js"></script>
+    <script src="./dist/js/validate.js"></script>
+    <script src="./dist/js/task.js"></script>
+</body>
+</html>

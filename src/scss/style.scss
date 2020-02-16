@@ -1,0 +1,228 @@
+$grey-color: #e8e8e8;
+$black-color:#969699;
+$blue-color:#08085e;
+$search-color:#b0cce8;
+$lightblue-color:#f2f7fc;
+$red-color:#ff0000;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+}
+
+.container {
+    margin: 70px 0 0 70px;
+}
+
+form{
+
+    .field {
+        position: relative;
+
+        img {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            right:5px;
+            top:8px;
+            z-index: -1;
+        }
+
+
+        input {
+            width: 300px;
+            height: 30px;
+            border:1px solid $grey-color;
+            background-color:rgba(255, 255, 255, 0.8);
+            
+            &:focus {
+                border-color: $blue-color;
+            }
+        }
+
+        .error {
+            border-color:$red-color;
+        }
+
+        label{
+            position: absolute;
+            top:8px;
+            left: 8px;
+            color:#807d7d;
+            font-size:16px;
+
+        }
+        p {
+            font-size:10px;
+            color:$red-color;
+        }
+
+        .animation_label {
+            font-size: 12px;
+            color: $blue-color;
+            transition: 0.2s;
+            top: -9px;
+            background-color: white;   
+        }
+    }
+}
+
+.company_select {
+    width: 300px;
+
+    .field{
+        margin:8px;
+        position: relative;
+    }
+
+    span {
+        margin: 50px 0 60px 10px;
+        display: block;
+        width:100%;
+        height: 1px;
+        background-color: $black-color;
+    }
+
+    .employee_list {
+        display: none;
+        margin-top: 10px;
+        width: 300px;
+        border: 1px solid $search-color;
+        border-radius: 2px;
+        text-align: center;
+
+        div {
+            border-bottom: 1px solid $search-color;
+        }
+
+        input {
+            width: 270px;
+            background-color: $lightblue-color;
+            margin: 5px 0 5px;
+        }
+
+        ul {
+            max-height: 200px;
+            overflow-y: scroll;
+            text-align: left;
+            font-size: 15px;
+            line-height: 23px;
+            margin-left: 15px;
+
+            li{
+                padding: 10px;
+                list-style: none;
+                position: relative;
+
+                &:hover {
+                    background-color: $lightblue-color;
+                }
+            }
+        }
+    }
+}
+
+.add_task {
+    margin-left: 10px;
+
+    p {
+        font-size: 15px;
+        margin-left: 10px;
+    }
+
+    .field {
+        margin-top:10px
+    }
+
+    .warp_currency {
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin:20px 0;
+        width: 300px;
+         
+        span {
+            font-size:15px;
+            display: flex;
+        }
+
+        button {
+            font-size: 12px;
+            margin-left: 20px;
+            color: #ffff;
+            padding: 10px 30px;
+            background-color: $blue-color;
+            border: 1px solid $blue-color;
+        }
+    }
+}
+
+.todo {
+
+    table {
+        border: 1px solid $search-color;
+        padding: 20px;
+        border-collapse: collapse;
+
+        tr {
+            margin: 15px;
+            border-bottom: 1px solid $search-color;
+            
+            th {
+                width: 200px;
+                height: 50px;
+                font-size: 13px;
+                font-weight: 300;
+                z-index: 1;
+
+                img {
+                    height: 10px;
+                    width: 10px;
+                    margin-left:5px;
+                    position: relative;
+                }
+            }
+
+            &:first-child:hover, #delete, #details {
+                cursor: pointer;
+            }
+
+            #delete {
+                img {
+                 width: 15px;
+                 height: 15px;
+                 margin-right:5px;
+                 z-index:-1;
+                }
+            }
+
+            td { 
+                display:none;
+           
+                    li {
+                    list-style: none;
+                    font-size: 12px;
+                    margin-left: 30px;
+                    padding: 5px;
+                    // font-weight: bold;
+                }
+            }
+            
+        }
+        tr .border_anim {
+            border: none;
+        }
+    }
+
+    p {
+        font-size: 15px;
+        font-weight: 300;
+        margin: 20px;
+    }
+}
